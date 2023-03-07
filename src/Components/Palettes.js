@@ -132,7 +132,35 @@ const Palettes = () => {
                   );
                 })}
               </div>
-              <p>{p.name}</p>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <p>{p.name}</p>
+                <button
+                  className="btn-icon"
+                  onClick={() => {
+                    console.log(p.name);
+                    alert("this feature will be available soon");
+                  }}
+                  style={{
+                    zIndex: "10",
+                    fontSize: "1.1rem",
+                    outline: "none",
+                    padding: ".3rem",
+                    color: "red",
+                    filter: "drop-shadow(0 3px 0.3rem rgba(0, 0, 0, 0.4))",
+                    border: "none",
+                    cursor: "pointer",
+                    background: "transparent",
+                  }}
+                >
+                  <i className="fa-sharp fa-solid fa-trash"></i>
+                </button>
+              </div>
             </Link>
           );
         })}
@@ -181,6 +209,7 @@ const PalettesStyled = styled.div`
       outline: none;
       border: none;
     }
+
     .input-control {
       position: relative;
       width: 100%;
@@ -247,6 +276,7 @@ const PalettesStyled = styled.div`
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
     .palette {
       display: grid;
       grid-template-columns: repeat(5, 1fr);

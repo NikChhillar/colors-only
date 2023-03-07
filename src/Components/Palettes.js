@@ -66,15 +66,16 @@ const Palettes = () => {
   //
   const addPalette = () => {
     const newPalette = {
-      id: new Date().getDate(),
+      id: new Date().getTime(),
       name: slugify(paletteName),
-      createdAt: new Date().getDate(),
+      createdAt: new Date().getTime(),
       colors: generateRandomClrs(),
     };
 
     //
     const savedPalette = localStorage.getItem(`myPalette-${newPalette.name}`);
     if (savedPalette) {
+      alert("This palette already exists....");
       return;
     }
     // else add to local storage...if doesn't exist
